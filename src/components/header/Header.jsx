@@ -8,7 +8,7 @@ const logo = (
   <div className={styles.logo}>
     <Link to='/'>
       <h2>
-        Git<span>Love</span>.
+        Give<span>Love</span>.
       </h2>
     </Link>
   </div>
@@ -19,7 +19,7 @@ const cart = (
     <Link to='/cart'>
         Cart
         <FaShoppingCart size={20}/>
-        <p>5</p>
+        <p>0</p>
       </Link>
   </span>
 );
