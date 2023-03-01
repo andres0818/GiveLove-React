@@ -3,7 +3,7 @@ import styles from "./auth.module.scss";
 import loginImg from "../../assets/login.png";
 import { Link } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
-import Card from "../Card/Card";
+import Card from "../../components/Card/Card";
 
 
 const Login = () => {
@@ -28,7 +28,7 @@ const Login = () => {
             <FaGoogle color="#fff" /> Login With Google
           </button>
           <span className={styles.register}>
-            <p>Don't have an accont?</p>
+            <p>Don't have an account?</p>
             <Link to="/register">Register</Link>
           </span>
         </div>
