@@ -18,7 +18,7 @@ const Login = () => {
           <form>
             <input type="text" placeholder="Email" required />
             <input type="password" placeholder="Password" required />
-            <button className="--btn --btn-primary --btn-block">Login</button>
+            
             <div className={styles.links}>
               <Link to="/reset"> Reset Password</Link>
             </div>
