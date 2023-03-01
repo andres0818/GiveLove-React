@@ -4,6 +4,7 @@ import styles from './Header.module.scss';
 import { FaShoppingCart,FaTimes } from 'react-icons/fa';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 
+
 const logo = (
   <div className={styles.logo}>
     <Link to='/'>
