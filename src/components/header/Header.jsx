@@ -6,6 +6,7 @@ import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 import {auth} from "../../firebase/auth";
 import {signOut} from "firebase/auth";
 import {toast} from "react-toastify";
+import { useEffect } from 'react/cjs/react.production.min';
 
 
 const logo = (
@@ -34,7 +35,11 @@ const Header = () => {
   //funcion de mostrar y ocultar menú
   const [showMenu, setShowMenu] = useState(false)
   const navigate = useNavigate()
-  
+
+useEffect(() => {
+
+}, [])
+
   const toggleMenu = () => {
     setShowMenu(!showMenu)
   };

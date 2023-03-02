@@ -47,12 +47,12 @@ const Login = () => {
       });
   };
 
-  // Login with Goooglr
+  // Login with Google
   const provider = new GoogleAuthProvider();
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        // const user = result.user;
+        //const user = result.user;
         toast.success("Login Successfully");
         redirectUser();
       })
