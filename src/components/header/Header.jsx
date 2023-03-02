@@ -1,8 +1,11 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import styles from './Header.module.scss';
-import { FaShoppingCart,FaTimes } from 'react-icons/fa';
+import { FaShoppingCart, FaTimes } from 'react-icons/fa';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
+import {auth} from "../../firebase/auth";
+import {signOut} from "firebase/auth";
+import {toast} from "react-toastify";
 
 
 const logo = (
@@ -25,11 +28,12 @@ const cart = (
   </span>
 );
 
-const activeLink = ({isActive}) => (isActive ? `${styles.active}` : "")
+const activeLink = ({ isActive }) => (isActive ? `${styles.active}` : "")
 
 const Header = () => {
   //funcion de mostrar y ocultar menú
-  const [showMenu, setShowMenu] = useState (false)
+  const [showMenu, setShowMenu] = useState(false)
+  const navigate = useNavigate()
   
   const toggleMenu = () => {
     setShowMenu(!showMenu)
@@ -37,27 +41,39 @@ const Header = () => {
   const hideMenu = () => {
     setShowMenu(false)
   };
-  
-    return (
+
+  const logoutUser = () => {
+    signOut(auth).then(() => {
+      toast.success("Logout successfully.");
+      navigate("/");
+    })
+    .catch((error) => {
+      toast.error(error.message);
+    });
+  }
+
+
+
+  return (
     <header>
       <div className={styles.header}>
         {logo}
 
         <nav className={showMenu ? `${styles["show-nav"]}`
-        : `${styles["hide-nav"]}`}>
+          : `${styles["hide-nav"]}`}>
 
-          <div  className={
-            showMenu 
-            ? `${styles["nav-wrapper"]} ${styles["show-nav-wrapper" ]}`
-          : `${styles["nav-wrapper"]}`
+          <div className={
+            showMenu
+              ? `${styles["nav-wrapper"]} ${styles["show-nav-wrapper"]}`
+              : `${styles["nav-wrapper"]}`
           }
-          onClick={hideMenu}
+            onClick={hideMenu}
           ></div>
 
           <ul onClick={hideMenu}>
             <li className={styles["logo-mobile"]}>
               {logo}
-              <FaTimes size={22} color="#fff" onClick={hideMenu}/>
+              <FaTimes size={22} color="#fff" onClick={hideMenu} />
             </li>
             <li>
               <NavLink to="/" className={activeLink}>
@@ -72,18 +88,19 @@ const Header = () => {
           </ul>
           <div className={styles["header-right"]} onClick={hideMenu}>
             <span className={styles.links}>
-              <NavLink to="/login"className={activeLink}>Login</NavLink>
-              <NavLink to="/register"className={activeLink}>Register</NavLink>
-              <NavLink to="/order-history"className={activeLink}>My Orders</NavLink>
+              <NavLink to="/login" className={activeLink}>Login</NavLink>
+              <NavLink to="/register" className={activeLink}>Register</NavLink>
+              <NavLink to="/order-history" className={activeLink}>My Orders</NavLink>
+              <NavLink to="/" onClick={logoutUser}>Logout</NavLink>
             </span>
             {cart}
           </div>
-          
+
         </nav>
 
         <div className={styles["menu-icon"]}>
           {cart}
-          <HiOutlineMenuAlt3 size={28} onClick={toggleMenu}/>
+          <HiOutlineMenuAlt3 size={28} onClick={toggleMenu} />
         </div>
 
       </div>
