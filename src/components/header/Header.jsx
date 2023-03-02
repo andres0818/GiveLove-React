@@ -1,13 +1,15 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import styles from './Header.module.scss';
-import { FaShoppingCart, FaTimes } from 'react-icons/fa';
+import { FaShoppingCart, FaTimes, FaUserCircle } from 'react-icons/fa';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 import {auth} from "../../firebase/auth";
-import {signOut} from "firebase/auth";
+import {onAuthStateChanged, signOut} from "firebase/auth";
 import {toast} from "react-toastify";
 import { useEffect } from 'react/cjs/react.production.min';
-
+import {useDispatch} from "react-redux";
+import {SET_ACTIVE_USER} from "../../redux/slice"
 
 const logo = (
   <div className={styles.logo}>
@@ -34,11 +36,30 @@ const activeLink = ({ isActive }) => (isActive ? `${styles.active}` : "")
 const Header = () => {
   //funcion de mostrar y ocultar menú
   const [showMenu, setShowMenu] = useState(false)
+  const [displayName, setdisplayUName] = useState("")
   const navigate = useNavigate()
 
-useEffect(() => {
+  const dispatch = useDispatch()
 
-}, [])
+  //Monitor currentley sign in user
+useEffect(() => {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      //console.log(user);
+      //const uid = user.uid;
+      //console.log(user.displayName);
+      setdisplayUName(user.displayName)
+    
+      dispatch(SET_ACTIVE_USER({
+        email:user.email,
+        userName:user.displayName,
+        userID:user.uid,
+      }))
+    }else{
+      setdisplayUName("");
+    }
+  });
+}, []);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu)
@@ -94,6 +115,7 @@ useEffect(() => {
           <div className={styles["header-right"]} onClick={hideMenu}>
             <span className={styles.links}>
               <NavLink to="/login" className={activeLink}>Login</NavLink>
+              <a href="#"><FaUserCircle size={16}/>Hola, {displayName}</a>
               <NavLink to="/register" className={activeLink}>Register</NavLink>
               <NavLink to="/order-history" className={activeLink}>My Orders</NavLink>
               <NavLink to="/" onClick={logoutUser}>Logout</NavLink>
