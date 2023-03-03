@@ -4,12 +4,14 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import styles from './Header.module.scss';
 import { FaShoppingCart, FaTimes, FaUserCircle } from 'react-icons/fa';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
-import {auth} from "../../firebase/auth";
-import {onAuthStateChanged, signOut} from "firebase/auth";
-import {toast} from "react-toastify";
-import { useEffect } from 'react/cjs/react.production.min';
-import {useDispatch} from "react-redux";
-import {SET_ACTIVE_USER} from "../../redux/slice"
+import { auth } from "../../firebase/config";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { toast } from "react-toastify";
+import { useEffect } from 'react';
+import { useDispatch } from "react-redux";
+import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from "../../redux/slice/authSlice"
+import ShowOnLogin, { ShowOnLogout } from '../hiddenLink/hiddenLink';
+
 
 const logo = (
   <div className={styles.logo}>
@@ -114,11 +116,16 @@ useEffect(() => {
           </ul>
           <div className={styles["header-right"]} onClick={hideMenu}>
             <span className={styles.links}>
-              <NavLink to="/login" className={activeLink}>Login</NavLink>
-              <a href="#"><FaUserCircle size={16}/>Hola, {displayName}</a>
-              <NavLink to="/register" className={activeLink}>Register</NavLink>
-              <NavLink to="/order-history" className={activeLink}>My Orders</NavLink>
-              <NavLink to="/" onClick={logoutUser}>Logout</NavLink>
+                <NavLink to="/login" className={activeLink}>Login</NavLink>
+              </ShowOnLogout>
+
+              <ShowOnLogin>
+                <a href="#home" style ={{color:"#ff7722"}}><FaUserCircle size={16} />Hola, {displayName}</a>
+              </ShowOnLogin>
+
+              <ShowOnLogin>
+                <NavLink to="/order-history" className={activeLink}>My Orders</NavLink>
+                <NavLink to="/" onClick={logoutUser}>Logout</NavLink>
             </span>
             {cart}
           </div>
