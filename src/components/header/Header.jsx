@@ -38,34 +38,45 @@ const activeLink = ({ isActive }) => (isActive ? `${styles.active}` : "")
 const Header = () => {
   //funcion de mostrar y ocultar menú
   const [showMenu, setShowMenu] = useState(false)
-  const [displayName, setdisplayUName] = useState("")
+  const [displayName, setdisplayName] = useState("");
   const navigate = useNavigate()
 
   const dispatch = useDispatch()
 
   //Monitor currentley sign in user
-useEffect(() => {
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      //console.log(user);
-      //const uid = user.uid;
-      //console.log(user.displayName);
-      setdisplayUName(user.displayName)
-    
-      dispatch(SET_ACTIVE_USER({
-        email:user.email,
-        userName:user.displayName,
-        userID:user.uid,
-      }))
-    }else{
-      setdisplayUName("");
-    }
-  });
-}, []);
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        //console.log(user);
+        //const uid = user.uid;
+        //console.log(user.displayName);
+        if (user.displayName == null) {
+          const u1 = user.email.substring(0, user.email.indexOf("@"));
+          const uName = u1.charAt(0).toUpperCase() + u1.slice(1);
+          //console.log(uName);
+          setdisplayName(uName);
+        } else {
+          setdisplayName(user.displayName);
+          dispatch(REMOVE_ACTIVE_USER());
+        }
 
-  const toggleMenu = () => {
-    setShowMenu(!showMenu)
-  };
+
+        dispatch(SET_ACTIVE_USER({
+          email: user.email,
+          userName: user.displayName ? user.displayName :
+            displayName,
+          userID: user.uid,
+        })
+        );
+      } else {
+        setdisplayName("");
+      }
+    });
+  }, [dispatch, displayName]);
+
+  function toggleMenu() {
+    setShowMenu(!showMenu);
+  }
   const hideMenu = () => {
     setShowMenu(false)
   };
@@ -75,9 +86,9 @@ useEffect(() => {
       toast.success("Logout successfully.");
       navigate("/");
     })
-    .catch((error) => {
-      toast.error(error.message);
-    });
+      .catch((error) => {
+        toast.error(error.message);
+      });
   }
 
 
@@ -116,6 +127,8 @@ useEffect(() => {
           </ul>
           <div className={styles["header-right"]} onClick={hideMenu}>
             <span className={styles.links}>
+
+              <ShowOnLogout>
                 <NavLink to="/login" className={activeLink}>Login</NavLink>
               </ShowOnLogout>
 
@@ -125,7 +138,12 @@ useEffect(() => {
 
               <ShowOnLogin>
                 <NavLink to="/order-history" className={activeLink}>My Orders</NavLink>
+              </ShowOnLogin>
+
+              <ShowOnLogin>
                 <NavLink to="/" onClick={logoutUser}>Logout</NavLink>
+              </ShowOnLogin>
+
             </span>
             {cart}
           </div>

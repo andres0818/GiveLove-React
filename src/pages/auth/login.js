@@ -47,9 +47,10 @@ const signInWithGoogle = () => {
     .then((result) => {
       //const user = result.user;
       toast.success("Login Successfully");
-      redirectUser();
+      navigate();
     })
     .catch((error) => {
+      setIsLoading(false);
       toast.error(error.message);
     });
 };
