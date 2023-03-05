@@ -9,7 +9,7 @@ const logo = (
   <div className={styles.logo}>
     <Link to='/'>
       <h2>
-        Give<span>Love</span>.
+        Give<span>L</span>ove
       </h2>
     </Link>
   </div>
