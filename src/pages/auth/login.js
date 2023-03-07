@@ -12,7 +12,7 @@ import {
 import { auth } from "../../firebase/config";
 import { toast } from "react-toastify";
 import Loader from "../../components/loader/Loader";
-import { useSelector } from "react-redux";
+//import { useSelector } from "react-redux";
 
 
 const Login = () => {

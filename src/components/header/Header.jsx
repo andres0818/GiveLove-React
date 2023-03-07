@@ -63,11 +63,9 @@ const Header = () => {
         if (user.displayName == null) {
           const u1 = user.email.slice(0, -10);
           const uName = u1.charAt(0).toUpperCase() + u1.slice(1);
-          //console.log(uName);
           setdisplayName(uName);
         } else {
           setdisplayName(user.displayName);
-          dispatch(REMOVE_ACTIVE_USER());
         }
 
         dispatch(
@@ -158,13 +156,11 @@ const Header = () => {
             </ul>
             <div className={styles["header-right"]} onClick={hideMenu}>
               <span className={styles.links}>
-
                 <ShowOnLogout>
                   <NavLink to="/login" className={activeLink}>
                     Login
                   </NavLink>
                 </ShowOnLogout>
-
                 <ShowOnLogin>
                   <a href="#home" style={{ color: "#ff7722" }}>
                     <FaUserCircle size={16} />

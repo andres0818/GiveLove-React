@@ -1,14 +1,14 @@
 import styles from "./auth.module.scss";
 import { Link } from "react-router-dom";
 import resetImg from "../../assets/forgot.png";
-import Card from "../../components/Card/Card";
+import Card from "../../components/card/Card";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { auth } from "../../firebase/config";
 import { sendPasswordResetEmail } from "firebase/auth";
 import Loader from "../../components/loader/Loader";
 
-const Reset = () => {
+export const Reset = () => {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
