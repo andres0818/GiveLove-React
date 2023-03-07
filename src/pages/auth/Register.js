@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./auth.module.scss";
 import registerImg from "../../assets/register.png";
-import Card from "../../components/Card/Card.jsx";
+import Card from "../../components/card/Card.jsx";
 import { Link, useNavigate } from "react-router-dom";
 
 import { createUserWithEmailAndPassword } from "firebase/auth";

@@ -3,19 +3,32 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@emailjs/browser": "^3.10.0",
         "@reduxjs/toolkit": "^1.9.3",
+        "@stripe/react-stripe-js": "^1.16.5",
+        "@stripe/stripe-js": "^1.48.0",
         "@testing-library/jest-dom": "^5.16.0",
         "@testing-library/react": "^11.2.7",
         "@testing-library/user-event": "^12.8.3",
+<<<<<<< HEAD
         "firebase": "^9.17.2",
+=======
+        "chart.js": "^4.2.1",
+        "firebase": "^9.17.1",
+>>>>>>> 4e19810ec26ad9069fcc3e087c3f8af96eced7c4
         "node-sass": "^8.0.0",
+        "notiflix": "^3.2.6",
         "react": "^17.0.2",
+        "react-chartjs-2": "^5.2.0",
+        "react-country-region-selector": "^3.6.1",
         "react-dom": "^17.0.2",
         "react-icons": "^4.3.1",
         "react-redux": "^8.0.5",
         "react-router-dom": "^6.8.2",
         "react-scripts": "5.0.0",
-        "react-toastify": "^9.1.1"
+        "react-star-rate": "^0.2.0",
+        "react-toastify": "^9.1.1",
+        "react-use-cart": "^1.13.0"
     },
     "scripts": {
         "start": "react-scripts start",
