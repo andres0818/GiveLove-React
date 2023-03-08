@@ -1,25 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import useFetchCollection from "../../customHooks/useFetchCollection";
+//import useFetchCollection from "../../customHooks/useFetchCollection";
 import {
-    GET_PRICE_RANGE,
+    //GET_PRICE_RANGE,
     selectProducts,
-    STORE_PRODUCTS,
+    //STORE_PRODUCTS,
 } from "../../redux/slice/productSlice";
 import styles from "./Product.module.scss";
 import ProductFilter from "./productFilter/ProductFilter";
 import ProductList from "./productList/ProductList";
 import spinnerImg from "../../assets/spinner.jpg";
 import { FaCogs } from "react-icons/fa";
-
+import { getProduct } from "../../redux/actions/actionProduct"
 const Product = () => {
-    const { data, isLoading } = useFetchCollection("products");
+    //const { data, isLoading } = useFetchCollection("products");
     const [showFilter, setShowFilter] = useState(false);
-    const products = useSelector(selectProducts);
+    //const products = useSelector(selectProducts);
+    const products = useSelector(state => state.product.products);
+
+    console.log(products);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(
+        dispatch(getProduct())
+        /*dispatch(
             STORE_PRODUCTS({
                 products: data,
             })
@@ -29,8 +33,8 @@ const Product = () => {
             GET_PRICE_RANGE({
                 products: data,
             })
-        );
-    }, [dispatch, data]);
+        );*/
+    }, []);
 
     const toggleFilter = () => {
         setShowFilter(!showFilter);
@@ -44,10 +48,16 @@ const Product = () => {
                         showFilter ? `${styles.filter} ${styles.show}` : `${styles.filter}`
                     }
                 >
-                    {isLoading ? null : <ProductFilter />}
+                    {/* {isLoading ? null : <ProductFilter />} */}
                 </aside>
+                {
+                    products.map(product => (
+                        <img src={product.imageURL} alt="imagen" />
+                    ))
+                }
                 <div className={styles.content}>
-                    {isLoading ? (
+
+                    {/* {isLoading ? (
                         <img
                             src={spinnerImg}
                             alt="Loading.."
@@ -56,7 +66,7 @@ const Product = () => {
                         />
                     ) : (
                         <ProductList products={products} />
-                    )}
+                    )} */}
                     <div className={styles.icon} onClick={toggleFilter}>
                         <FaCogs size={20} color="orangered" />
                         <p>

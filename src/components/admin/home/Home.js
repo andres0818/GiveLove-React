@@ -15,7 +15,7 @@ import {
     selectTotalOrderAmount,
     STORE_ORDERS,
 } from "../../../redux/slice/orderSlice";
-import useFetchCollection from "../../../customHooks/useFetchCollection";
+//import useFetchCollection from "../../../customHooks/useFetchCollection";
 import Chart from "../../chart/Chart";
 
 //Icons
@@ -28,10 +28,10 @@ const Home = () => {
     const orders = useSelector(selectOrderHistory);
     const totalOrderAmount = useSelector(selectTotalOrderAmount);
 
-    const fbProducts = useFetchCollection("products");
-    const { data } = useFetchCollection("orders");
+    //const fbProducts = useFetchCollection("products");
+    //const { data } = useFetchCollection("orders");
 
-    const dispatch = useDispatch();
+/* const dispatch = useDispatch();
     useEffect(() => {
         dispatch(
             STORE_PRODUCTS({
@@ -43,7 +43,7 @@ const Home = () => {
 
         dispatch(CALC_TOTAL_ORDER_AMOUNT());
     }, [dispatch, data, fbProducts]);
-
+*/
     return (
         <div className={styles.home}>
             <h2>Admin Home</h2>
