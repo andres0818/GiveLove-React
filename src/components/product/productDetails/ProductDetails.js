@@ -8,9 +8,8 @@ import {
     CALCULATE_TOTAL_QUANTITY,
     DECREASE_CART,
     selectCartItems,
-} from "../../../redux/slice/cartSlice";
-import useFetchDocument from "../../../customHooks/useFetchDocument";
-import useFetchCollection from "../../../customHooks/useFetchCollection";
+} from "../../../redux/slice/cartSlice";import useFetchDocument from "../../../customHooks/useFetchDocument";
+//import useFetchCollection from "../../../customHooks/useFetchCollection";
 import Card from "../../card/Card";
 import StarsRating from "react-star-rate";
 
@@ -20,8 +19,8 @@ const ProductDetails = () => {
     const dispatch = useDispatch();
     const cartItems = useSelector(selectCartItems);
     const { document } = useFetchDocument("products", id);
-    const { data } = useFetchCollection("reviews");
-    const filteredReviews = data.filter((review) => review.productID === id);
+    //const { data } = useFetchCollection("reviews");
+    //const filteredReviews = data.filter((review) => review.productID === id);
 
     const cart = cartItems.find((cart) => cart.id === id);
     const isCartAdded = cartItems.findIndex((cart) => {
@@ -102,7 +101,7 @@ const ProductDetails = () => {
                 <Card cardClass={styles.card}>
                     <h3>Product Reviews</h3>
                     <div>
-                        {filteredReviews.length === 0 ? (
+                        {/* {filteredReviews.length === 0 ? (
                             <p>There are no reviews for this product yet.</p>
                         ) : (
                             <>
@@ -123,7 +122,7 @@ const ProductDetails = () => {
                                     );
                                 })}
                             </>
-                        )}
+                        )} */}
                     </div>
                 </Card>
             </div>

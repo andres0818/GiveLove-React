@@ -1,9 +1,20 @@
-import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
-import { useEffect, useState } from "react";
-import { toast } from "react-toastify";
+//import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
+import { collection, getDocs, query } from "firebase/firestore";
+//import { useEffect, useState } from "react";
+//import { toast } from "react-toastify";
 import { db } from "../firebase/config";
 
-const useFetchCollection = (collectionName) => {
+export const userGetDataProduct = async () => {
+    let productos = [] 
+    let collectionProducts = query (collection(db, "products"))
+    let documentProducts = await getDocs (collectionProducts)
+    documentProducts.forEach (product => {
+        productos.push({id:product.id, ...product.data()})
+    } )
+    return productos
+}
+
+/*const useFetchCollection = (collectionName) => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -35,4 +46,4 @@ const useFetchCollection = (collectionName) => {
     return { data, isLoading };
 };
 
-export default useFetchCollection;
+export default useFetchCollection;*/
