@@ -16,6 +16,7 @@ import CheckoutSuccess from "./pages/checkout/CheckoutSucess";
 import ReviewProducts from "./components/reviewProducts/ReviewProducts";
 
 
+
 function App() {
   return (
     <>
@@ -28,6 +29,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reset" element={<Reset />} />
+          <Route path="/details/:name" element={<ProductDetails />} />
 
           <Route
             path="/admin/*"

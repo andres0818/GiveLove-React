@@ -15,10 +15,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        "template_7xyhwen",
+        process.env.REACT_APP_EMAILJS_service_3o7se9d,
+        "service_3o7se9d",
         form.current,
-        "user_hKs2aRfLoozcqA28UpUyz"
+        "Ox_plpuxdXlkiS4cW"
       )
       .then(
         (result) => {
@@ -76,7 +76,7 @@ const Contact = () => {
                 </span>
                 <span>
                   <FaEnvelope />
-                  <p>Support@eshop.com</p>
+                  <p>Support@GiveLove.com</p>
                 </span>
                 <span>
                   <GoLocation />
