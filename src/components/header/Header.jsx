@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import styles from "./Header.module.scss";
@@ -24,7 +23,7 @@ const logo = (
   <div className={styles.logo}>
     <Link to="/">
       <h2>
-        Give<span>Love</span>.
+        e<span>Shop</span>.
       </h2>
     </Link>
   </div>
@@ -193,3 +192,4 @@ const Header = () => {
 };
 
 export default Header;
+

@@ -6,7 +6,7 @@ import { selectEmail } from "../../redux/slice/authSlice";
 const AdminOnlyRoute = ({ children }) => {
     const userEmail = useSelector(selectEmail);
 
-    if (userEmail === "melissatoro25@gmail.com") {
+    if (userEmail === "yuyunet2@hotmail.es") {
         return children;
     }
     return (
@@ -26,7 +26,7 @@ const AdminOnlyRoute = ({ children }) => {
 export const AdminOnlyLink = ({ children }) => {
     const userEmail = useSelector(selectEmail);
 
-    if (userEmail === "melissatoro25@gmail.com") {
+    if (userEmail === "yuyunet2@hotmail.es") {
         return children;
     }
     return null;
