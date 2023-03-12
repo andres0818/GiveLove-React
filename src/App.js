@@ -14,12 +14,16 @@ import CheckoutSuccess from "./pages/checkout/CheckoutSucess";
 //import OrderHistory from "./pages/orderHistory/OrderHistory";
 //import OrderDetails from "./pages/orderDetails/OrderDetails";
 import ReviewProducts from "./components/reviewProducts/ReviewProducts";
-
+import Form from "./components/form/Form.jsx";
 
 
 function App() {
   return (
     <>
+
+    <Form></Form>
+
+
       <BrowserRouter>
         <ToastContainer />
         <Header />
