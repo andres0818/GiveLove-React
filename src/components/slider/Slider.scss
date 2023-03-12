@@ -31,16 +31,17 @@
 .content {
     position: absolute;
     text-align: center;
-    top: 23rem;
-    left: 50%;
+    top: 10rem;
+    height: 100%;
+    //left: 50%;
     opacity: 0;
-    width: 50%;
-    padding: 3rem;
+    width: 100%;
+    padding: 30rem;
     display: flex;
     justify-self: center;
     align-items: center;
     flex-direction: column;
-    transform: translateX(-50%);
+    transform: translateX(0%);
     background: rgba(0, 0, 0, 0.4);
     animation: slide-up 1s ease 0.5s;
     animation-fill-mode: forwards;
@@ -54,12 +55,12 @@
 @keyframes slide-up {
     0% {
         visibility: visible;
-        top: 23rem;
+        top: 10rem;
     }
 
     100% {
         visibility: visible;
-        top: 17rem;
+        top: 0rem;
     }
 }
 
@@ -116,3 +117,4 @@ hr {
     background: #fff;
     width: 50%;
 }
+
