@@ -5,12 +5,13 @@ import { getStorage } from "firebase/storage"
 
 // Your web app's Firebase configuration
 export const firebaseConfig = {
-  apiKey: "AIzaSyBdNORfrnWQMFqGaxhi-BOMxW1G_9xZQ-4",
-  authDomain: "givelove- a971b.firebaseapp.com",
-  projectId: "givelove-a971b",
-  storageBucket: "givelove-a971b.appspot.com",
-  messagingSenderId: "1013001398701",
-  appId: "1:1013001398701:web:a23bbf49422293a7e31924"
+  apiKey: "AIzaSyDGsu3QKbM-7KluHnklxRCmPbJHYiWKuwo",
+  authDomain: "givelove-bb25c.firebaseapp.com",
+  projectId: "givelove-bb25c",
+  storageBucket: "givelove-bb25c.appspot.com",
+  messagingSenderId: "725844587522",
+  appId: "1:725844587522:web:375b51041ea89ae6abe31b",
+  measurementId: "G-GF760ET81G"
 };
 
 // Initialize Firebase
