@@ -35,17 +35,11 @@ const Product = () => {
   const navigate = useNavigate();
   return (
     <section>
-      <div className={`container ${styles.product}`}>
-        <aside
-          className={
-            showFilter ? `${styles.filter} ${styles.show}` : `${styles.filter}`
-          }
-        >
-          {/* {isLoading ? null : <ProductFilter />} */}
-        </aside>
+      
         {products.map((products) => (
-          <div>
-            <img
+          <div className="containerCard">
+            <div className="card">
+            <img className="cardImg"
               src={products.imageURL}
               alt="imagen"
               onClick={() => {
@@ -53,19 +47,11 @@ const Product = () => {
 
               }}
             />
-            <h2>{products.name}</h2>
+            <h5>{products.name}</h5>
+            </div>
           </div>
         ))}
-        <div className={styles.content}>
-          
-          <div className={styles.icon} onClick={toggleFilter}>
-            <FaCogs size={20} color="orangered" />
-            <p>
-              <b>{showFilter ? "Hide Filter" : "Show Filter"}</b>
-            </p>
-          </div>
-        </div>
-      </div>
+        
     </section>
   );
 };

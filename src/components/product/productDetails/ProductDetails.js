@@ -13,6 +13,7 @@ import {
 import Card from "../../card/Card";
 import StarsRating from "react-star-rate";
 import { getProduct } from "../../../redux/actions/actionProduct";
+import UserContact from "../../../pages/contact/UserContact";
 
 const ProductDetails = () => {
 
@@ -37,7 +38,7 @@ const ProductDetails = () => {
         dispatch(getProduct());
       }, [dispatch]);
     
-   
+   const btnNew =document.getElementById('btnNew')
     return (
         <section>
             {
@@ -45,9 +46,11 @@ const ProductDetails = () => {
                 <div className='cardDetails'>
                     
                         <h2>{order.name}</h2>
+                        <img className="cardImg"
+              src={order.imageURL}/>
                         <h2>{order.category}</h2>
                         <p>{order.descripcion}</p>
-                        <button>contact</button>
+                       <UserContact/>
                 </div>
             ) : (
                 <div>No hay información</div>

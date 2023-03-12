@@ -31,7 +31,7 @@ const Home = () => {
     <div>
       <Slider />
       <Product />
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex aspernatur quos adipisci nihil harum, vitae aliquid, amet inventore quasi obcaecati fugiat maxime quam! Assumenda voluptatum quis aperiam blanditiis quia saepe.</p>
+      {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex aspernatur quos adipisci nihil harum, vitae aliquid, amet inventore quasi obcaecati fugiat maxime quam! Assumenda voluptatum quis aperiam blanditiis quia saepe.</p>
       {products.map((products) => (
           <div>
             <img
@@ -40,8 +40,8 @@ const Home = () => {
             />
             <h2>{products.name}</h2>
           </div>
-        ))}
-        <h1>hola</h1>
+        ))} */}
+      
     </div>
   );
 };

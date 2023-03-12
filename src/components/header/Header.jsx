@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import styles from "./Header.module.scss";
-import { FaShoppingCart, FaTimes, FaUserCircle } from "react-icons/fa";
+import { FaHandHolding, FaShoppingCart, FaTimes, FaUserCircle } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { auth } from "../../firebase/config";
 import { onAuthStateChanged, signOut } from "firebase/auth";
@@ -18,12 +18,15 @@ import {
   CALCULATE_TOTAL_QUANTITY,
   selectCartTotalQuantity,
 } from "../../redux/slice/cartSlice";
+import LOG from '../../assets/LOG.png';
 
 const logo = (
+  
   <div className={styles.logo}>
     <Link to="/">
       <h2>
-        e<span>Shop</span>.
+        <img src={LOG} alt="" className={styles.log}/>
+        Give<span>Love</span>
       </h2>
     </Link>
   </div>
@@ -103,8 +106,8 @@ const Header = () => {
   const cart = (
     <span className={styles.cart}>
       <Link to="/cart">
-        Cart
-        <FaShoppingCart size={20} />
+        
+        <FaHandHolding size={20} />
         <p>{cartTotalQuantity}</p>
       </Link>
     </span>
@@ -137,19 +140,19 @@ const Header = () => {
               </li>
               <li>
                 <AdminOnlyLink>
-                  <Link to="/admin/home">
+                  <Link to="/admin/inicio">
                     <button className="--btn --btn-primary">Admin</button>
                   </Link>
                 </AdminOnlyLink>
               </li>
               <li>
                 <NavLink to="/" className={activeLink}>
-                  Home
+                  Inicio
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/contact" className={activeLink}>
-                  Contact Us
+                  Contáctenos
                 </NavLink>
               </li>
             </ul>
@@ -157,23 +160,23 @@ const Header = () => {
               <span className={styles.links}>
                 <ShowOnLogout>
                   <NavLink to="/login" className={activeLink}>
-                    Login
+                    Iniciar sesión
                   </NavLink>
                 </ShowOnLogout>
                 <ShowOnLogin>
-                  <a href="#home" style={{ color: "#ff7722" }}>
+                  <a href="#inicio" style={{ color: "#FDF3C8" }}>
                     <FaUserCircle size={16} />
-                    Hi, {displayName}
+                    Hola, {displayName}
                   </a>
                 </ShowOnLogin>
                 <ShowOnLogin>
                   <NavLink to="/order-history" className={activeLink}>
-                    My Orders
+                    Quienes somos
                   </NavLink>
                 </ShowOnLogin>
                 <ShowOnLogin>
                   <NavLink to="/" onClick={logoutUser}>
-                    Logout
+                    Cerrar sesión
                   </NavLink>
                 </ShowOnLogin>
               </span>

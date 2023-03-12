@@ -11,18 +11,15 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    console.log(form.current);
-
     emailjs
       .sendForm(
-        process.env.REACT_APP_EMAILJS_service_3o7se9d,
-        "service_3o7se9d",
-        form.current,
-        "Ox_plpuxdXlkiS4cW"
+        "service_oydbh9b",
+        "template_4l840m9", form.current,
+        'RB7V3B7OqH8Ypz6wG'
       )
       .then(
         (result) => {
-          toast.success("Message sent successfully");
+          toast.success("Mensaje enviado correctamente");
         },
         (error) => {
           toast.error(error.text);
@@ -34,41 +31,42 @@ const Contact = () => {
   return (
     <section>
       <div className={`container ${styles.contact}`}>
-        <h2>Contact Us</h2>
+        <h2>Contactenos</h2>
         <div className={styles.section}>
           <form ref={form} onSubmit={sendEmail}>
             <Card cardClass={styles.card}>
-              <label>Name</label>
+              <label>Nombre</label>
               <input
                 type="text"
                 name="user_name"
-                placeholder="Full Name"
+                placeholder="Nombre completo"
                 required
               />
-              <label>Email</label>
+              <label>Correo electronico</label>
               <input
                 type="email"
                 name="user_email"
-                placeholder="Your active email"
+                placeholder="ejemplo@ejemplo.com"
                 required
               />
-              <label>Subject</label>
+              <label>Asunto</label>
               <input
                 type="text"
                 name="subject"
-                placeholder="Subject"
+                placeholder="Asunto"
                 required
               />
-              <label>Message</label>
+              <label>Mensaje</label>
               <textarea name="message" cols="30" rows="10"></textarea>
-              <button className="--btn --btn-primary">Send Message</button>
+              <button className="--btn --btn-primary">Enviar mensaje</button>
             </Card>
           </form>
 
           <div className={styles.details}>
             <Card cardClass={styles.card2}>
-              <h3>Our Contact Information</h3>
-              <p>Fill the form or contact us via other channels listed below</p>
+              <h3>Nuestra informacion de contacto</h3>
+              <p>
+Complete el formulario o contáctenos a través de otros canales que se enumeran a continuación</p>
               <div className={styles.icons}>
                 <span>
                   <FaPhoneAlt />
@@ -76,7 +74,7 @@ const Contact = () => {
                 </span>
                 <span>
                   <FaEnvelope />
-                  <p>Support@GiveLove.com</p>
+                  <p>Support@givelove.com</p>
                 </span>
                 <span>
                   <GoLocation />
