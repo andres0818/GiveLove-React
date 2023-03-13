@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 // Pages
 import { Home, Contact, Login, Register, Reset, Admin } from "./pages";
 // Components
-import { Header, Footer } from "./components";
+import { Header, Footer} from "./components";
 import AdminOnlyRoute from "./components/adminOnlyRoute/adminOnlyRoute";
 import ProductDetails from "./components/product/productDetails/ProductDetails";
 import Cart from "./pages/cart/Cart";

@@ -84,75 +84,75 @@ const ViewProducts = () => {
         }
     };
 
-    // return (
-    //     <>
-    //         {isLoading && <Loader />}
-    //         <div className={styles.table}>
-    //             <h2>All Products</h2>
+    // // return (
+    // //     <>
+    // //         {isLoading && <Loader />}
+    // //         <div className={styles.table}>
+    // //             <h2>All Products</h2>
 
-    //             <div className={styles.search}>
-    //                 <p>
-    //                     <b>{filteredProducts.length}</b> products found
-    //                 </p>
-    //                 <Search value={search} onChange={(e) => setSearch(e.target.value)} />
-    //             </div>
+    // //             <div className={styles.search}>
+    // //                 <p>
+    // //                     <b>{filteredProducts.length}</b> products found
+    // //                 </p>
+    // //                 <Search value={search} onChange={(e) => setSearch(e.target.value)} />
+    // //             </div>
 
-    //             {filteredProducts.length === 0 ? (
-    //                 <p>No product found.</p>
-    //             ) : (
-    //                 <table>
-    //                     <thead>
-    //                         <tr>
-    //                             <th>s/n</th>
-    //                             <th>Image</th>
-    //                             <th>Name</th>
-    //                             <th>Category</th>
-    //                             <th>Price</th>
-    //                             <th>Actions</th>
-    //                         </tr>
-    //                     </thead>
-    //                     <tbody>
-    //                         {currentProducts.map((product, index) => {
-    //                             const { id, name, price, imageURL, category } = product;
-    //                             return (
-    //                                 <tr key={id}>
-    //                                     <td>{index + 1}</td>
-    //                                     <td>
-    //                                         <img
-    //                                             src={imageURL}
-    //                                             alt={name}
-    //                                             style={{ width: "100px" }}
-    //                                         />
-    //                                     </td>
-    //                                     <td>{name}</td>
-    //                                     <td>{category}</td>
-    //                                     <td>{`$${price}`}</td>
-    //                                     <td className={styles.icons}>
-    //                                         <Link to={`/admin/add-product/${id}`}>
-    //                                             <FaEdit size={20} color="green" />
-    //                                         </Link>
-    //                                         &nbsp;
-    //                                         <FaTrashAlt
-    //                                             size={18}
-    //                                             color="red"
-    //                                             onClick={() => confirmDelete(id, imageURL)}
-    //                                         />
-    //                                     </td>
-    //                                 </tr>
-    //                             );
-    //                         })}
-    //                     </tbody>
-    //                 </table>
-    //             )}
-    //             <Pagination
-    //                 currentPage={currentPage}
-    //                 setCurrentPage={setCurrentPage}
-    //                 productsPerPage={productsPerPage}
-    //                 totalProducts={filteredProducts.length}
-    //             />
-    //         </div>
-    //     </>
-    // );
+    // //             {filteredProducts.length === 0 ? (
+    // //                 <p>No product found.</p>
+    // //             ) : (
+    // //                 <table>
+    // //                     <thead>
+    // //                         <tr>
+    // //                             <th>s/n</th>
+    // //                             <th>Image</th>
+    // //                             <th>Name</th>
+    // //                             <th>Category</th>
+    // //                             <th>Price</th>
+    // //                             <th>Actions</th>
+    // //                         </tr>
+    // //                     </thead>
+    // //                     <tbody>
+    // //                         {currentProducts.map((product, index) => {
+    // //                             const { id, name, price, imageURL, category } = product;
+    // //                             return (
+    // //                                 <tr key={id}>
+    // //                                     <td>{index + 1}</td>
+    // //                                     <td>
+    // //                                         <img
+    // //                                             src={imageURL}
+    // //                                             alt={name}
+    // //                                             style={{ width: "100px" }}
+    // //                                         />
+    // //                                     </td>
+    // //                                     <td>{name}</td>
+    // //                                     <td>{category}</td>
+    // //                                     <td>{`$${price}`}</td>
+    // //                                     <td className={styles.icons}>
+    // //                                         <Link to={`/admin/add-product/${id}`}>
+    // //                                             <FaEdit size={20} color="green" />
+    // //                                         </Link>
+    // //                                         &nbsp;
+    // //                                         <FaTrashAlt
+    // //                                             size={18}
+    // //                                             color="red"
+    // //                                             onClick={() => confirmDelete(id, imageURL)}
+    // //                                         />
+    // //                                     </td>
+    // //                                 </tr>
+    // //                             );
+    // //                         })}
+    // //                     </tbody>
+    // //                 </table>
+    // //             )}
+    // //             <Pagination
+    // //                 currentPage={currentPage}
+    // //                 setCurrentPage={setCurrentPage}
+    // //                 productsPerPage={productsPerPage}
+    // //                 totalProducts={filteredProducts.length}
+    // //             />
+    // //         </div>
+    // //     </>
+    // // );
 };
 
 export default ViewProducts;
