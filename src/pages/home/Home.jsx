@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Product from "../../components/product/Product";
+//import Product from "../../components/product/Product";
+import Search from "../../components/search/Search";
 import Slider from "../../components/slider/Slider";
 import { getProduct } from "../../redux/actions/actionProduct";
 
@@ -30,17 +31,8 @@ const Home = () => {
   return (
     <div>
       <Slider />
-      <Product />
-      {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex aspernatur quos adipisci nihil harum, vitae aliquid, amet inventore quasi obcaecati fugiat maxime quam! Assumenda voluptatum quis aperiam blanditiis quia saepe.</p>
-      {products.map((products) => (
-          <div>
-            <img
-              src={products.imageURL}
-              alt="imagen"
-            />
-            <h2>{products.name}</h2>
-          </div>
-        ))} */}
+      {/* //<Product /> */}
+      <Search/>
       
     </div>
   );
