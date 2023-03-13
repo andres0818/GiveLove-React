@@ -24,6 +24,7 @@ const Cart = () => {
     const cartTotalQuantity = useSelector(selectCartTotalQuantity);
     const dispatch = useDispatch();
     const isLoggedIn = useSelector(selectIsLoggedIn);
+    const info = useSelector((store) => store.product);
 
     const navigate = useNavigate();
 
@@ -161,6 +162,20 @@ const Cart = () => {
                                 </Card>
                             </div>
                         </div>
+                        {info && info.length ? (
+          info.map((info, index) => (
+            <article key={index} >
+             
+                <h3>{info.name}</h3>
+                
+                
+            </article>
+
+          ))
+        ) : (
+          <></>
+        )}
+
                     </>
                 )}
             </div>
