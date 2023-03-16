@@ -47,18 +47,20 @@ const ProductDetails = () => {
             {
             order ? (
                 <>
+                
+                <h2 className={style.titulo}>{order.name} </h2>
                 <div className={style.cardDetails}>
-                    
-                        <h2 className={style.titulo}>{order.name}</h2>
+                    <div className={style.carta}>
                         <img className={style.cardImg}
                         src={order.imageURL}/>
                         {/* <h2>{order.category}</h2> */}
+                        </div>
                         <p className={style.enunciado}>{order.descripcion}</p>
                     
                     <div className={style.map}>
                         <GoogleMaps 
                          apiKey={"AIzaSyAIoaqD6zupornIMbdYcAfDaTSHjAjFWJ4"}
-                         style={{ height: "400px", width: "300px" }}
+                         style={{ height: "300px", width: "400px" }}
                          zoom={12}
                          center={{
                            lat: 6.25184,
