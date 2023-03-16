@@ -1,33 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
-body{
-    font-size: small;
-    font-family: 'Raleway', sans-serif;
-}
-section{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 15px;
-
-
-    .containerCard{
-        width: 100px;
-        height: 50px;
-        
-    }
-    .cardImg{
-        width: 200px;
-        height: 200px;
-        object-fit: contain;
-    }
-    
-}
-
-.search{
+.search {
     margin: 5px 0;
     position: relative;
     flex: 1;
+    background-color: aqua;
 
     .icon {
         position: absolute;
@@ -48,5 +23,29 @@ section{
         border-radius: 3px;
         outline: none;
     }
+    
 }
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+body{
+    font-size: small;
+    font-family: 'Raleway', sans-serif;
+}
+section{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 15px;
 
+
+    .containerCard{
+        width: 100px;
+        height: 50px;
+    }
+    .cardImg{
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+    }
+    
+}

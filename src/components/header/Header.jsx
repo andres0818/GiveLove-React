@@ -171,7 +171,7 @@ const Header = () => {
                 </ShowOnLogin>
                 <ShowOnLogin>
                   <NavLink to="/order-history" className={activeLink}>
-                    Solicitudes
+                    Quienes somos
                   </NavLink>
                 </ShowOnLogin>
                 <ShowOnLogin>

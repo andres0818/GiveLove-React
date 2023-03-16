@@ -1,4 +1,29 @@
-product {
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+body{
+    font-size: small;
+    font-family: 'Raleway', sans-serif;
+}
+section{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 15px;
+
+
+    .containerCard{
+        width: 100px;
+        height: 50px;
+        
+    }
+    img{
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+    }
+    
+}
+oduct {
     display: flex;
     position: relative;
 
@@ -7,6 +32,7 @@ product {
         // border: 2px solid var(--dark-blue);
         transition: all 0.3s;
     }
+    
 
     .content {
         width: 80%;

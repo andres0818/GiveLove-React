@@ -1,4 +1,4 @@
-//@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
 .fixed {
   width: 100%;
   position: fixed;
@@ -6,11 +6,12 @@
   transition: all 0.5s;
   z-index: 9; 
 }
-
+// background-color: #6CC4A1;
 header {
   width: 100%;
-  background: linear-gradient(to right, #23b9cd, #26d0eb, #6bdfef);
+  background-color: #1F4287;
   color: #fff;
+  font-family: 'Salsa';
 
   .header {
     width: 100%;
@@ -23,6 +24,12 @@ header {
     align-items: center;
     position: relative;
   }
+  .log{
+    width: 3.75%;
+    margin: 0 0 10px -50px;
+    position: absolute;
+    
+  }
 
   .log{
     width: 3.75%;
@@ -33,12 +40,12 @@ header {
 
   .logo a h2 {
     width: 25%;
-    color: #fff;
+    color: #fdf7f7;
     font-family: 'Salsa', cursive;
     cursor: pointer;
     span {
       font-size: 30px;
-      color: #fff;
+      color: rgb(253, 250, 250);
       
     }
   }
@@ -59,9 +66,9 @@ header {
       li {
         margin: 0 5px;
         a {
-          color: #FDF3C8;
+          color: rgb(252, 247, 245);
           &:hover {
-            color: purple;
+            color:#252525;;
           }
         }
       }
@@ -73,10 +80,10 @@ header {
 
     .cart a {
       display: flex;
-      color: #FDF3C8;
+      color: rgb(247, 245, 245);
       position: relative;
       &:hover {
-        color: purple;
+        color: #252525;;
       }
       &.active {
         color: var(--color-danger);
@@ -99,9 +106,9 @@ header {
 
     .links a {
       margin: 0 5px;
-      color: #FDF3C8;
+      color: #f8f4f4;
       &:hover {
-        color: purple;
+        color: #252525;
       }
       &.active {
         color: var(--color-danger);
