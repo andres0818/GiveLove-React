@@ -37,8 +37,8 @@ const Search = () => {
     }
   };
   return (
-    <section>
-      <div className={styles.search}>
+    <div>
+        <div className={styles.search}>
         <BiSearch size={18} className={styles.icon} />
 
         <input
@@ -48,7 +48,9 @@ const Search = () => {
           onChange={handleChange}
         />
       </div>
+    <section>
       
+
       {!value
         ? products.map((products) => (
             <div className="containerCard">
@@ -67,6 +69,7 @@ const Search = () => {
           ))
         : filterProducts()}
     </section>
+    </div>
   );
 };
 

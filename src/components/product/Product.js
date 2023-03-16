@@ -52,6 +52,10 @@ const Product = () => {
           </div>
         ))}
         
+
+
+
+        
     </section>
   );
 };
