@@ -20,24 +20,24 @@ const Navbar = () => {
                 <ul>
                     <li>
                         <NavLink to="/admin/home" className={activeLink}>
-                            Home
+                            Inicio
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/admin/all-products" className={activeLink}>
-                            All Products
+                            Fundaciones
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/admin/add-product/ADD" className={activeLink}>
-                            Add Product
+                            Agregar
                         </NavLink>
                     </li>
-                    <li>
+                    {/* <li>
                         <NavLink to="/admin/orders" className={activeLink}>
                             Orders
                         </NavLink>
-                    </li>
+                    </li> */}
                 </ul>
             </nav>
         </div>

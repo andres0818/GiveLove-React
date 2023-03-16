@@ -13,9 +13,9 @@ const Footer = () => {
             <h2 className={styles.love}>Give<span>Love</span></h2>
             </div>
             <div className={styles.columna}>
-                    <h3>
+                    <h4>
                         Temas relacionados
-                    </h3>
+                    </h4>
                     <ul>
                         <li>Quienes somos</li>
                         <li>Contactenos</li>
@@ -23,9 +23,9 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className={styles.columna}>
-                    <h3>
+                    <h4>
                         Datos de contacto
-                    </h3>
+                    </h4>
                     <ul>
                         <li>giovaniitj@gmail.com</li>
                         <li>+573502356987</li>
@@ -33,9 +33,9 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className={styles.columna}>
-                    <h3 className="title">
+                    <h4 className="title">
                         Redes sociales
-                    </h3>
+                    </h4>
                     <ul className={styles.redes}>
                         <li>
                                 <BsFacebook />

@@ -57,7 +57,7 @@ const Contact = () => {
                 required
               />
               <label>Mensaje</label>
-              <textarea name="message" cols="30" rows="10"></textarea>
+              <textarea name="message" cols="30" rows="3"></textarea>
               <button className="--btn --btn-primary">Enviar mensaje</button>
             </Card>
           </form>

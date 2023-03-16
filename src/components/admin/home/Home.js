@@ -46,29 +46,29 @@ const Home = () => {
 */
     return (
         <div className={styles.home}>
-            <h2>Admin Home</h2>
+            <h2>Administrador</h2>
             <div className={styles["info-box"]}>
-                <InfoBox
+                {/* <InfoBox
                     cardClass={`${styles.card} ${styles.card1}`}
                     title={"Earnings"}
                     count={`$${totalOrderAmount}`}
                     icon={earningIcon}
-                />
+                /> */}
                 <InfoBox
                     cardClass={`${styles.card} ${styles.card2}`}
-                    title={"Products"}
+                    title={"Fundaciones"}
                     count={products.length}
-                    icon={productIcon}
+                    // icon={productIcon}
                 />
-                <InfoBox
+                {/* <InfoBox
                     cardClass={`${styles.card} ${styles.card3}`}
                     title={"Orders"}
                     count={orders.length}
                     icon={ordersIcon}
-                />
+                /> */}
             </div>
             <div>
-                <Chart />
+                {/* <Chart /> */}
             </div>
         </div>
     );
