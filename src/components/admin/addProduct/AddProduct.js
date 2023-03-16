@@ -26,10 +26,9 @@ const categories = [
 const initialState = {
   name: "",
   imageURL: "",
-  price: 0,
   category: "",
   brand: "",
-  desc: "",
+  descripcion: "",
 };
 
 const AddProduct = () => {
@@ -63,7 +62,7 @@ const AddProduct = () => {
     const file = e.target.files[0];
     // console.log(file);
 
-    const storageRef = ref(storage, `eshop/${Date.now()}${file.name}`);
+    const storageRef = ref(storage, `giveLove/${Date.now()}${file.name}`);
     const uploadTask = uploadBytesResumable(storageRef, file);
 
     uploadTask.on(
@@ -94,10 +93,9 @@ const AddProduct = () => {
       const docRef = addDoc(collection(db, "products"), {
         name: product.name,
         imageURL: product.imageURL,
-        price: Number(product.price),
         category: product.category,
         brand: product.brand,
-        desc: product.desc,
+        descripcion: product.descripcion,
         createdAt: Timestamp.now().toDate(),
       });
       setIsLoading(false);
@@ -125,10 +123,9 @@ const AddProduct = () => {
       setDoc(doc(db, "products", id), {
         name: product.name,
         imageURL: product.imageURL,
-        price: Number(product.price),
         category: product.category,
         brand: product.brand,
-        desc: product.desc,
+        descripcion: product.descripcion,
         createdAt: productEdit.createdAt,
         editedAt: Timestamp.now().toDate(),
       });
@@ -148,10 +145,10 @@ const AddProduct = () => {
         <h2>{detectForm(id, "Add New Product", "Edit Product")}</h2>
         <Card cardClass={styles.card}>
           <form onSubmit={detectForm(id, addProduct, editProduct)}>
-            <label>Product name:</label>
+            <label>Fundacion name:</label>
             <input
               type="text"
-              placeholder="Product name"
+              placeholder="Fundacion name"
               required
               name="name"
               value={product.name}
@@ -193,49 +190,13 @@ const AddProduct = () => {
               )}
             </Card>
 
-            <label>Product price:</label>
-            <input
-              type="number"
-              placeholder="Product price"
-              required
-              name="price"
-              value={product.price}
-              onChange={(e) => handleInputChange(e)}
-            />
-            <label>Product Category:</label>
-            <select
-              required
-              name="category"
-              value={product.category}
-              onChange={(e) => handleInputChange(e)}
-            >
-              <option value="" disabled>
-                -- choose product category --
-              </option>
-              {categories.map((cat) => {
-                return (
-                  <option key={cat.id} value={cat.name}>
-                    {cat.name}
-                  </option>
-                );
-              })}
-            </select>
-
-            <label>Product Company/Brand:</label>
-            <input
-              type="text"
-              placeholder="Product brand"
-              required
-              name="brand"
-              value={product.brand}
-              onChange={(e) => handleInputChange(e)}
-            />
+            
 
             <label>Product Description</label>
             <textarea
-              name="desc"
+              name="descripcion"
               required
-              value={product.desc}
+              value={product.descripcion}
               onChange={(e) => handleInputChange(e)}
               cols="30"
               rows="10"

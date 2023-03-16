@@ -50,9 +50,7 @@ const Slider = () => {
                                     <h2>{heading}</h2>
                                     <p>{desc}</p>
                                     <hr />
-                                    <a href="#product" className='--btn --btn-primary'>
-                                        Donar
-                                    </a>
+                                    
                                 </div>
                             </>
                         )}
