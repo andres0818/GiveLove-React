@@ -11,7 +11,7 @@ import Cart from "./pages/cart/Cart";
 //import CheckoutDetails from "./pages/checkout/CkeckoutDetails";
 import Checkout from "./pages/checkout/Ckeckout";
 import CheckoutSuccess from "./pages/checkout/CheckoutSucess";
-//import OrderHistory from "./pages/orderHistory/OrderHistory";
+import OrderHistory from "./pages/orderHistory/OrderHistory";
 //import OrderDetails from "./pages/orderDetails/OrderDetails";
 import ReviewProducts from "./components/reviewProducts/ReviewProducts";
 
@@ -46,7 +46,7 @@ function App() {
           {/* <Route path="/checkout-details" element={<CheckoutDetails />} /> */}
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/checkout-success" element={<CheckoutSuccess />} />
-          {/* <Route path="/order-history" element={<OrderHistory />} /> */}
+          <Route path="/order-history" element={<OrderHistory />} />
           {/* <Route path="/order-details/:id" element={<OrderDetails />} /> */}
           <Route path="/review-product/:id" element={<ReviewProducts />} />
         </Routes>
