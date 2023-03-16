@@ -9,7 +9,7 @@
 // background-color: #6CC4A1;
 header {
   width: 100%;
-  background-color: #1F4287;
+  background-color: #181142;
   color: #fff;
   font-family: 'Salsa';
 
@@ -61,7 +61,7 @@ header {
         a {
           color: rgb(252, 247, 245);
           &:hover {
-            color:#252525;;
+            color:#72d6ad;;
           }
         }
       }
@@ -76,7 +76,7 @@ header {
       color: rgb(247, 245, 245);
       position: relative;
       &:hover {
-        color: #252525;;
+        color: #72d6ad;
       }
       &.active {
         color: var(--color-danger);
@@ -101,7 +101,7 @@ header {
       margin: 0 5px;
       color: #f8f4f4;
       &:hover {
-        color: #252525;
+        color: #72d6ad;
       }
       &.active {
         color: var(--color-danger);
@@ -195,7 +195,7 @@ header {
       padding: 5px 0;
       // border-bottom: 1px solid #333;
       a {
-        color: #af5555;
+        color: #72d6ad;;
         position: relative;
         &:hover {
           color: rgb(107, 106, 105);

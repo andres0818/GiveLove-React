@@ -1,6 +1,6 @@
 import { deleteDoc, doc } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { db, storage } from "../../../firebase/config";
 import styles from "./ViewProducts.module.scss";
@@ -83,6 +83,31 @@ const ViewProducts = () => {
             toast.error(error.message);
         }
     };
+    return (
+        <section>
+          
+            {products.map((products) => (
+              <div className={styles.containerCard}>
+                <div className={styles.carta}>
+                <img className={styles.CardImg}
+                  src={products.imageURL}
+                  alt="imagen"
+                  onClick={() => {
+                    Navigate(`/details/${products.name}`);
+    
+                  }}
+                />
+                <h5>{products.name}</h5>
+                </div>
+              </div>
+            ))}
+            
+    
+    
+    
+            
+        </section>
+      );
 
     // return (
     //     <>

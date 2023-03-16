@@ -1,0 +1,47 @@
+.info{
+    display: flex;
+  display: flex;
+   gap: 60px; 
+  }
+  .info_cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 400px;
+    width: 350px;
+    height: 330px;
+  
+    margin-left: 20px;
+    img{
+      width:200px ;
+    }
+    h3{
+      font-size: 20px;
+      margin-top: 10px;
+    }
+    p{
+      padding: 5px;
+    }
+  
+  }
+  
+  .info_text{
+    display: flex;
+    font-size: 14px;
+  
+  }
+  
+  .home_cards{
+    height: 500px;
+    h2{
+      font-size: 25px;
+      margin-top: 60px;
+      margin-left: 500px;
+    }
+  }
+  .col-sm{
+  p{
+    margin-left: 400px;
+  }
+  }
