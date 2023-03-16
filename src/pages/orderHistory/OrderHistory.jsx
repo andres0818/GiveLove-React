@@ -27,7 +27,7 @@ const OrderHistory = () => {
 
   return (
     <div className={styles.nosotros}>
-      <h2>Quienes Somos</h2>
+      <h1>Quienes Somos</h1>
       <p>
         En GiveLove creemos en el potencial de los seres humanos y su poder
         transformador.​ Queremos que cada persona tenga la oportunidad de ser su
