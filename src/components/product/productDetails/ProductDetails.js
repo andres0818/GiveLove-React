@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import styles from "../Product.module.scss";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
@@ -47,7 +48,7 @@ const ProductDetails = () => {
                     
                         <h2>{order.name}</h2>
                         <img className="cardImg"
-              src={order.imageURL}/>
+                        src={order.imageURL}/>
                         <h2>{order.category}</h2>
                         <p>{order.descripcion}</p>
                        <UserContact/>
