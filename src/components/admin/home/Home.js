@@ -60,12 +60,12 @@ const Home = () => {
                     count={products.length}
                     // icon={productIcon}
                 />
-                {/* <InfoBox
+                <InfoBox
                     cardClass={`${styles.card} ${styles.card3}`}
                     title={"Orders"}
                     count={orders.length}
                     icon={ordersIcon}
-                /> */}
+                />
             </div>
             <div>
                 {/* <Chart /> */}

@@ -33,11 +33,11 @@ const Navbar = () => {
                             Agregar
                         </NavLink>
                     </li>
-                    {/* <li>
+                    <li>
                         <NavLink to="/admin/orders" className={activeLink}>
                             Orders
                         </NavLink>
-                    </li> */}
+                    </li>
                 </ul>
             </nav>
         </div>
