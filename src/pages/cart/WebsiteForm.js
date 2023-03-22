@@ -24,9 +24,9 @@ export const WebsiteForm = (props) => {
   const validURL = (str) => {
     var pattern = new RegExp();
     //   "^(https?:\\/\\/)?" + // protocol
-    //     "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
+    //     "((([a-z\\d]([a-z\\d-][a-z\\d]))\\.)+[a-z]{2,}|" + // domain name
     //     "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
-    //     "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
+    //     "(\\:\\d+)?(\\/[-a-z\\d%_.~+])" + // port and path
     //     "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
     //     "(\\#[-a-z\\d_]*)?$",
     //   "i" // fragment locator
@@ -140,7 +140,7 @@ export const WebsiteForm = (props) => {
 
           <div >
             <div className="input-group-text bg-dark">
-              <i className="material-icons">Nombre</i>
+              {/* <label className="material-icons">Nombre</label> */}
             </div>
             <input
               type="text"
@@ -154,7 +154,7 @@ export const WebsiteForm = (props) => {
           
           <div className="input-group">
             <div className="input-group-text bg-dark">
-              <i className="material-icons">Telefono</i>
+              {/* //<i className="material-icons">Telefono</i> */}
             </div>
             <input
               type="number"
@@ -167,7 +167,7 @@ export const WebsiteForm = (props) => {
           </div>
           <div className="input-group">
             <div className="input-group-text bg-dark">
-              <i className="material-icons">Voluntariado</i>
+              {/* <i className="material-icons">Voluntariado</i> */}
             </div>
             <input
               type="text"
@@ -180,7 +180,7 @@ export const WebsiteForm = (props) => {
           </div>
           <div className="input-group mb-3">
             <div className={styles.link}>
-              <i className={styles.insertarlink}>Correo electronico</i>
+              {/* //<i className={styles.insertarlink}>Correo electronico</i> */}
             </div>
             <input
               type="text"
@@ -192,7 +192,7 @@ export const WebsiteForm = (props) => {
             />
           </div>
 
-          <label htmlFor="description">Descripcion:</label>
+          {/* <label htmlFor="description">Descripcion:</label> */}
           <textarea
             rows="3"
             className="form-control mb-3"
