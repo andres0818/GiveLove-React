@@ -13,18 +13,37 @@ import Checkout from "./pages/checkout/Ckeckout";
 import CheckoutSuccess from "./pages/checkout/CheckoutSucess";
 import OrderHistory from "./pages/orderHistory/OrderHistory";
 //import OrderDetails from "./pages/orderDetails/OrderDetails";
+import React, {useState, useContext, useEffect} from 'react'
 import ReviewProducts from "./components/reviewProducts/ReviewProducts";
 import { WebsiteForm } from "./pages/cart/WebsiteForm";
 
 
+import { getMonth } from "./util";
+import CalendarHeader from "./components/calendarheader/CalendarHeader";
+import Sidebar from "./components/sidebar/Sidebar";
+import Month from "./components/month/Month";
+import GlobalContext from "./context/GlobalContext";
+import EventModal from "./components/eventmodal/EventModal";
+import moment from 'moment/min/moment-with-locales';
+import 'moment/locale/es';
 
 
 function App() {
+  moment.locale('es'); 
+  const [currenMonth, setCurrentMonth] = useState(getMonth());
+  const { monthIndex, showEventModal } = useContext(GlobalContext);
+
+  useEffect(() => {
+    setCurrentMonth(getMonth(monthIndex));
+  }, [monthIndex]);
+
+
   return (
+    
     <>
       <BrowserRouter>
         <ToastContainer />
-        <Header />
+        <Header  />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
@@ -32,7 +51,18 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/reset" element={<Reset />} />
           <Route path="/details/:name" element={<ProductDetails />} />
-
+          <Route path='/calendar' element={
+          <React.Fragment>
+          {showEventModal && <EventModal />}
+          <div className='=h-screen flex flex-col'>
+          <CalendarHeader />
+          <div className='flex flex-1'>
+          <Sidebar />
+          <Month month={currenMonth} />
+          </div>
+          </div>
+          </React.Fragment>
+          } />
           <Route
             path="/admin/*"
             element={
@@ -41,8 +71,6 @@ function App() {
               </AdminOnlyRoute>
             }
           />
-
-
           <Route path="/product-details/:id" element={<ProductDetails />} />
           <Route path="/WebsiteForm" element={<WebsiteForm />} />
           <Route path="add" element={<WebsiteForm />} />
@@ -58,6 +86,8 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
+      
+      
     </>
   );
 }

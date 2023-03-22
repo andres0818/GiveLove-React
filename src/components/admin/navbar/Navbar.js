@@ -34,6 +34,11 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                     <li>
+                        <NavLink to="/calendar" className={activeLink}>
+                            Calendario 
+                        </NavLink>
+                    </li>
+                     <li>
                         <NavLink to="/admin/orders" className={activeLink}>
                             Red de amigos
                         </NavLink>

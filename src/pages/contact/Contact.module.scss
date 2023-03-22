@@ -9,10 +9,19 @@ h2{
         padding: 1rem;
         border: 1px solid #ccc;
     }
+    .btonn{
+        font-family: 'Inter', sans-serif;
+        background-color: #041C32;
+        color: white;
+        border-radius: 5px;
+        width: 120px;
+        height: 50px;
+    }
 
     .card2 {
+        font-family: 'Inter', sans-serif;
         padding: 2rem;
-        background-color: var(--light-blue);
+        background-color: #baabda;
         color: #fff;
 
         h3,

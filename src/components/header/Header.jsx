@@ -153,6 +153,11 @@ const Header = () => {
                   Contáctenos
                 </NavLink>
               </li>
+              <li>
+                <NavLink to="/calendar" className={activeLink}>
+                  Eventos
+                </NavLink>
+              </li>
             </ul>
             <div className={styles["header-right"]} onClick={hideMenu}>
               <span className={styles.links}>
@@ -163,7 +168,6 @@ const Header = () => {
                 </ShowOnLogout>
                 <ShowOnLogin >
                   <a href="#inicio" style={{ color: " #BAABDA;" }}>
-                    <FaUserCircle className={styles.iconLogin} size={16} />
                     Hola, {displayName}
                   </a>
                 </ShowOnLogin>
