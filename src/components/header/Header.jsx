@@ -102,10 +102,10 @@ const Header = () => {
   const WebsiteForm = (
     <span className={styles.cart}>
       <Link to="/WebsiteForm">
-        
-          <AiOutlineSave className="me-1" size="1.5rem" />
-          Save a Website
-    
+       
+          {/* <AiOutlineSave className="me-1" size="1.5rem" /> */}
+         
+    Red de amigos
       </Link>
 
     </span>
@@ -139,7 +139,7 @@ const Header = () => {
               <li>
                 <AdminOnlyLink>
                   <Link to="/admin/inicio">
-                    <button className="--btn --btn-primary">Admin</button>
+                    <button className={styles.admin}>Admin</button>
                   </Link>
                 </AdminOnlyLink>
               </li>
@@ -161,9 +161,9 @@ const Header = () => {
                     Iniciar sesión
                   </NavLink>
                 </ShowOnLogout>
-                <ShowOnLogin>
-                  <a href="#inicio" style={{ color: "#FDF3C8" }}>
-                    <FaUserCircle size={16} />
+                <ShowOnLogin >
+                  <a href="#inicio" style={{ color: " #BAABDA;" }}>
+                    <FaUserCircle className={styles.iconLogin} size={16} />
                     Hola, {displayName}
                   </a>
                 </ShowOnLogin>

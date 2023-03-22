@@ -2,6 +2,7 @@ import { deleteWebsite } from "../../firebase/api";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import styles from "./Cart.module.scss";
 
 export function WebsiteCard({ link }) {
   const navigate = useNavigate();

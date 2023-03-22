@@ -35,9 +35,15 @@ const Navbar = () => {
                     </li>
                     <li>
                         <NavLink to="/admin/orders" className={activeLink}>
-                            Orders
+                            Red de amigos
                         </NavLink>
                     </li>
+                    <li>
+                        <NavLink to="/admin/eventos" className={activeLink}>
+                            Calendario de eventos
+                        </NavLink>
+                    </li>
+                    
                 </ul>
             </nav>
         </div>

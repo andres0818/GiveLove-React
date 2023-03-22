@@ -12,7 +12,7 @@ import {
 import { auth } from "../../firebase/config";
 import { toast } from "react-toastify";
 import Loader from "../../components/loader/Loader";
-//import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 
 const Login = () => {
@@ -65,28 +65,28 @@ return (
 
       <Card>
         <div className={styles.form}>
-          <h2>Login</h2>
+          <h2>Iniciar Sesion</h2>
 
           <form onSubmit={loginUser}>
             <input
               type="text"
-              placeholder="Email"
+              placeholder="Correo"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
               type="password"
-              placeholder="Password"
+              placeholder="Contraseña"
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
             <button type="submit" className="--btn --btn-primary --btn-block">
-              Login
+              Iniciar Sesion
             </button>
             <div className={styles.links}>
-              <Link to="/reset">Reset Password</Link>
+              <Link to="/reset">Restablecer contraseña</Link>
             </div>
             <p>-- or --</p>
           </form>
@@ -97,8 +97,8 @@ return (
             <FaGoogle color="#fff" /> Login With Google
           </button>
           <span className={styles.register}>
-            <p>Don't have an account?</p>
-            <Link to="/register">Register</Link>
+            <p>No tiene cuenta?</p>
+            <Link className={styles.registrese} to="/register">Registrese</Link>
           </span>
         </div>
       </Card>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getWebsites } from "../firebase/api";
 import { WebsiteCard } from "./WebsiteCard";
+import styles from "./Cart.module.scss";
 
 export const WebsiteList = () => {
   const [websites, setWebsites] = useState([]);

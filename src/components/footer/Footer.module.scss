@@ -106,7 +106,11 @@ footer .redes li
 	margin: 0 9.5px;
     padding: 0px 19px;
 }
-
+@media(max-width: 1300px){
+    .icono{
+        width: 20px;
+    }
+}
 @media(max-width: 900px){
     footer {
         text-align: center;
@@ -117,6 +121,7 @@ footer .redes li
 
     footer .redes {
        justify-content: center;
+       
        
     }
 
