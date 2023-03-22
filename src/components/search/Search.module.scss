@@ -123,14 +123,9 @@ section{
         font-weight: bolder;
     }
    }
-  // .info_cards{
-  // display: flex;
-  // flex-wrap: wrap;
-  //  }
   
   .containerIcon{
     display: flex;
-    //flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     margin-top: 100px;
@@ -142,8 +137,3 @@ section{
     display: flex;
     font-size: 14px;
   }
-  @media(max-width: 1300px){
-    .info{
-        
-    }
-}
