@@ -33,7 +33,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className={styles.columna}>
-                    <h4 className="title">
+                    <h4 className={styles.title}>
                         Redes sociales
                     </h4>
                     <ul className={styles.redes}>

@@ -155,6 +155,11 @@ const Header = () => {
                   Contáctenos
                 </NavLink>
               </li>
+              <li>
+                <NavLink to="/calendar" className={activeLink}>
+                  Eventos
+                </NavLink>
+              </li>
             </ul>
             <div className={styles["header-right"]} onClick={hideMenu}>
               <span className={styles.links}>
@@ -164,8 +169,7 @@ const Header = () => {
                   </NavLink>
                 </ShowOnLogout>
                 <ShowOnLogin>
-                  <a href="#inicio" style={{ color: "#FDF3C8" }}>
-                    <FaUserCircle size={16} />
+                  <a href="#inicio" style={{ color: "#FDF3C8"}}>
                     Hola, {displayName}
                   </a>
                 </ShowOnLogin>
@@ -184,10 +188,10 @@ const Header = () => {
             </div>
           </nav>
 
-          {/* <div className={styles["menu-icon"]}>
-            {cart}
+          <div className={styles["menu-icon"]}>
+            {/* {cart} */}
             <HiOutlineMenuAlt3 size={28} onClick={toggleMenu} />
-          </div> */}
+          </div>
         </div>
       </header>
     </>

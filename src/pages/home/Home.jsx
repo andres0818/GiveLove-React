@@ -5,6 +5,7 @@ import styles from "./Home.module.scss";
 import Search from "../../components/search/Search";
 import Slider from "../../components/slider/Slider";
 import { getProduct } from "../../redux/actions/actionProduct";
+import Estadistics from "../../components/estadisticas/Estadistics";
 
 
 const Home = () => {
@@ -36,6 +37,7 @@ const Home = () => {
       {/* //<Product /> */}
 
       <Search />
+      <Estadistics />
     </div>
   );
 };

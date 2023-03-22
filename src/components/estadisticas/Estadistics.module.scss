@@ -1,0 +1,24 @@
+.containers {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .chartContainer {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .containe {
+      width: 100%;
+      padding: 0 10px;
+    }
+  }
+  

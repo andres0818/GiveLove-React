@@ -33,6 +33,11 @@ const Navbar = () => {
                             Agregar
                         </NavLink>
                     </li>
+                    <li>
+                        <NavLink to="/calendar" className={activeLink}>
+                            Calendario 
+                        </NavLink>
+                    </li>
                     {/* <li>
                         <NavLink to="/admin/orders" className={activeLink}>
                             Orders
