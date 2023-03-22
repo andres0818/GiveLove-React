@@ -98,13 +98,11 @@ footer .redes li
 	margin: 0 9.5px;
     padding: 0px 19px;
 }
-
-footer .title{
-    padding-right: 15px;
-    padding-bottom: 15px;
-    // padding-left: 15px;
+@media(max-width: 1300px){
+    .icono{
+        width: 20px;
+    }
 }
-
 @media(max-width: 900px){
     footer {
         text-align: center;
@@ -120,9 +118,9 @@ footer .title{
     }
 
     footer .redes {
-        justify-content: center;
-        padding: 10px;
-        margin-bottom: 20px;
+       justify-content: center;
+       
+       
     }
 
     footer .title{

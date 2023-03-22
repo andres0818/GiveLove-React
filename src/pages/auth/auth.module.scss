@@ -7,6 +7,7 @@
     .img {
         animation: slide-down 0.5s ease;
     }
+   
 
     .form {
         width: 35rem;
@@ -14,7 +15,7 @@
         animation: slide-up 0.5s ease;
 
         h2 {
-            color: var(--color-danger);
+            color: rgba(7, 6, 82, 0.986);
             text-align: center;
         }
 
@@ -43,6 +44,7 @@
             p {
                 text-align: center;
                 margin: 1rem;
+                
             }
         }
 
@@ -51,9 +53,25 @@
             justify-content: center;
             align-items: center;
             margin-top: 1rem;
+            
+        }
+
+        p{
+            font-size: 14px;
+        }
+        .registrese{
+            font-size: 7px;
+        }
+        span{
+            margin-top: 0;
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            justify-content: center;
         }
     }
 
+    
     @keyframes slide-up {
         0% {
             transform: translateY(-5rem);

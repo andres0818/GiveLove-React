@@ -40,7 +40,7 @@ header {
 
   .logo a h2 {
     width: 25%;
-    color: #fdf7f7;
+    color:  #BAABDA;
     font-family: 'Salsa', cursive;
     cursor: pointer;
     span {
@@ -68,7 +68,7 @@ header {
         a {
           color: rgb(252, 247, 245);
           &:hover {
-            color:#72d6ad;;
+            color: #BAABDA;
           }
         }
       }
@@ -83,7 +83,7 @@ header {
       color: rgb(247, 245, 245);
       position: relative;
       &:hover {
-        color: #72d6ad;
+        color:  #BAABDA;
       }
       &.active {
         color: var(--color-danger);
@@ -108,14 +108,17 @@ header {
       margin: 0 5px;
       color: #f8f4f4;
       &:hover {
-        color: #72d6ad;
+        color:  #BAABDA;
       }
       &.active {
-        color: var(--color-danger);
+        color: #BAABDA;;
       }
     }
   }
-
+  
+  .iconLogin{
+  margin-left: 15px;
+  }
   .menu-icon {
     cursor: pointer;
     display: none;
@@ -174,7 +177,7 @@ header {
         .cart {
           // display: block;
           // padding: 5px 0;
-          border-bottom: 1px solid #f50101;
+          border-bottom: 1px solid #BAABDA;
           // a {
           //   position: relative;
           //   p {
@@ -201,10 +204,10 @@ header {
       display: block;
       padding: 5px 0;
       a {
-        color: #72d6ad;;
+        color: #BAABDA;;
         position: relative;
         &:hover {
-          color: red;
+          color: #BAABDA;;
         }
         p {
           position: absolute;
@@ -232,7 +235,7 @@ header {
 
 .active {
   position: relative;
-  color: var(--color-danger);
+  color:  #BAABDA;;
 }
 
 .active::after {

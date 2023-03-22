@@ -1,26 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
 
+.titulo{
+    height: 0px;
+    width: 350px;
+    font-family: 'Salsa';
+    color: #181142;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+}
+
 .cardDetails{
-    font-family: 'Inter', sans-serif;
+    font-family: sans-serif;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    padding: 20px;
+    gap: 25px;
+    padding: 25px;
     text-align: center;
 }
 
-.cardImg{
-    position: relative;
-    right: 150px;
-    top: 1px;
-    width: 100%;
-    max-height: 300px;
-    object-fit: contain;
-    border-radius: 5px;
+.carta{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
     border-radius: 8px;
     border: 1px solid rgb(94, 140, 240);
     background-color: rgb(250, 250, 252);
@@ -28,44 +31,32 @@
     height: 250px;
     box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    
+    @media (max-width: 768px) {
+        width: 100%;
+        height: auto;
+    }
 }
 
-.titulo{
-    position: relative;
-    right: -520px;
-    top: -130px;
+.cardImg{
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 5px;
+
+    @media (max-width: 768px) {
+        height: 200px;
+    }
 }
 
 .enunciado{
-    position: relative;
-    right: 75px;
-    top: 13px;
-}
+    width: 40%;
 
-@media screen and (max-width: 768px) {
-    .cardDetails{
-        flex-direction: column;
-    }
-
-    .cardImg{
-        margin: 0 auto;
-        right: 0;
-        top: 0;
+    @media (max-width: 768px) {
         width: 100%;
-        max-height: 250px;
-        height: auto;
-    }
-
-    .titulo{
-        position: static;
-        margin-top: 20px;
-    }
-
-    .enunciado{
-        position: static;
-        margin-top: 10px;
     }
 }
+
 
 
 // .product {

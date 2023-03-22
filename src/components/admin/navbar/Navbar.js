@@ -38,11 +38,12 @@ const Navbar = () => {
                             Calendario 
                         </NavLink>
                     </li>
-                    {/* <li>
+                     <li>
                         <NavLink to="/admin/orders" className={activeLink}>
-                            Orders
+                            Red de amigos
                         </NavLink>
-                    </li> */}
+                    </li>
+                    
                 </ul>
             </nav>
         </div>

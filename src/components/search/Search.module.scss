@@ -17,6 +17,10 @@
   margin-bottom: 20px;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+body{
+    font-size: small;
+}  
 .search input[type="text"] {
   padding: 10px;
   border: none;
@@ -62,8 +66,8 @@ section{
     border-radius: 8px;
     border: 1px solid rgb(94, 140, 240);
     background-color: rgb(250, 250, 252);
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
     box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
@@ -92,7 +96,7 @@ section{
     width: 500px;
     height: 400px;
     width: 350px;
-    height: 330px;
+    height: 400px;
   
     margin-left: 20px;
     img{
@@ -118,13 +122,15 @@ section{
         color:#181142;
         font-weight: bolder;
     }
-  }
-//   .info_cards{
-   
-//   }
+   }
+  // .info_cards{
+  // display: flex;
+  // flex-wrap: wrap;
+  //  }
   
   .containerIcon{
     display: flex;
+    //flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     margin-top: 100px;
@@ -136,3 +142,8 @@ section{
     display: flex;
     font-size: 14px;
   }
+  @media(max-width: 1300px){
+    .info{
+        
+    }
+}

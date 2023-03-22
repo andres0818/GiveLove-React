@@ -1,31 +1,30 @@
 import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import styles from "./Header.module.scss";
-import { FaHandHolding, FaShoppingCart, FaTimes, FaUserCircle } from "react-icons/fa";
+import {  FaTimes, FaUserCircle } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { auth } from "../../firebase/config";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, } from "react-redux";
 import {
   REMOVE_ACTIVE_USER,
   SET_ACTIVE_USER,
 } from "../../redux/slice/authSlice";
 import ShowOnLogin, { ShowOnLogout } from "../hiddenLink/hiddenLink";
 import { AdminOnlyLink } from "../adminOnlyRoute/adminOnlyRoute";
-import {
-  CALCULATE_TOTAL_QUANTITY,
-  selectCartTotalQuantity,
-} from "../../redux/slice/cartSlice";
 import LOG from '../../assets/LOG.png';
+import WebsiteForm from "../../pages/cart/WebsiteForm";
+import { AiOutlineSave } from "react-icons/ai";
+
 
 const logo = (
-  
+
   <div className={styles.logo}>
     <Link to="/">
       <h2>
-        <img src={LOG} alt="" className={styles.log}/>
+        <img src={LOG} alt="" className={styles.log} />
         Give<span>Love</span>
       </h2>
     </Link>
@@ -38,11 +37,8 @@ const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [displayName, setdisplayName] = useState("");
   const [scrollPage, setScrollPage] = useState(false);
-  const cartTotalQuantity = useSelector(selectCartTotalQuantity);
 
-  useEffect(() => {
-    dispatch(CALCULATE_TOTAL_QUANTITY());
-  }, []);
+
 
   const navigate = useNavigate();
 
@@ -103,13 +99,15 @@ const Header = () => {
       });
   };
 
-  const cart = (
+  const WebsiteForm = (
     <span className={styles.cart}>
-      <Link to="/cart">
-        
-        <FaHandHolding size={20} />
-        <p>{cartTotalQuantity}</p>
+      <Link to="/WebsiteForm">
+       
+          {/* <AiOutlineSave className="me-1" size="1.5rem" /> */}
+         
+    Red de amigos
       </Link>
+
     </span>
   );
 
@@ -141,7 +139,7 @@ const Header = () => {
               <li>
                 <AdminOnlyLink>
                   <Link to="/admin/inicio">
-                    <button className="--btn --btn-primary">Admin</button>
+                    <button className={styles.admin}>Admin</button>
                   </Link>
                 </AdminOnlyLink>
               </li>
@@ -168,8 +166,9 @@ const Header = () => {
                     Iniciar sesión
                   </NavLink>
                 </ShowOnLogout>
-                <ShowOnLogin>
-                  <a href="#inicio" style={{ color: "#FDF3C8"}}>
+                <ShowOnLogin >
+                  <a href="#inicio" style={{ color: " #BAABDA;" }}>
+                    <FaUserCircle className={styles.iconLogin} size={16} />
                     Hola, {displayName}
                   </a>
                 </ShowOnLogin>
@@ -184,12 +183,12 @@ const Header = () => {
                   </NavLink>
                 </ShowOnLogin>
               </span>
-              {/* {cart} */}
+              {WebsiteForm}
             </div>
           </nav>
 
           <div className={styles["menu-icon"]}>
-            {/* {cart} */}
+            {WebsiteForm}
             <HiOutlineMenuAlt3 size={28} onClick={toggleMenu} />
           </div>
         </div>
